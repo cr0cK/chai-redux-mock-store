@@ -142,10 +142,9 @@ module.exports = function chaiReduxMockStore(chai, utils) {
       true
     );
 
-    new Assertion(types.slice(len))
-      .to.deep.equal([], 'More actions where dispatched than expected');
-    new Assertion(expectedTypes.length)
-      .to.be.equal(len, `Expect ${expectedTypes.length} types, ${len} dispatched`);
+    new Assertion(expectedActions.length).to.be.equal(actions.length,
+      `Expect ${expectedActions.length} actions, ${actions.length} dispatched`
+    );
   }
 
 
